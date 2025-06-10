@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrian Tiket Bioskop</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-film"></i> Antrian Tiket Bioskop</h1>
+            <p>Sistem antrian modern untuk pemesanan tiket yang adil dan efisien.</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2><i class="fas fa-user-plus"></i> Tambah Antrian</h2>
+                <input type="text" id="customerName" placeholder="Masukkan Nama Pemesan">
+                <input type="number" id="ticketCount" placeholder="Jumlah Tiket" min="1" value="1">
+                <button id="addQueueBtn"><i class="fas fa-plus-circle"></i> Tambahkan ke Antrian</button>
+
+                <div class="processing-controls">
+                    <h2><i class="fas fa-cogs"></i> Proses Antrian</h2>
+                    <div class="quantum-input">
+                        <label for="timeQuantum">Quantum (Round Robin):</label>
+                        <input type="number" id="timeQuantum" value="2" min="1">
+                    </div>
+                    <button id="processFifoBtn"><i class="fas fa-step-forward"></i> Proses FIFO</button>
+                    <button id="processRRBtn"><i class="fas fa-sync-alt"></i> Proses Round Robin</button>
+                </div>
+            </div>
+
+            <div class="queue-section">
+                <h2><i class="fas fa-users"></i> Daftar Tunggu</h2>
+                <ul id="queueList">
+                    </ul>
+                <div class="results">
+                    <h2><i class="fas fa-clipboard-check"></i> Hasil Proses</h2>
+                    <div id="result-container">
+                        <p>Hasil pemrosesan akan ditampilkan di sini.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <button id="helpBtn"><i class="fas fa-question-circle"></i> Petunjuk Penggunaan</button>
+        </footer>
+    </div>
+
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Petunjuk Penggunaan</h2>
+            <ol>
+                <li><strong>Tambah Antrian:</strong> Masukkan nama dan jumlah tiket, lalu klik "Tambahkan ke Antrian".</li>
+                <li><strong>Lihat Antrian:</strong> Pemesan yang baru ditambahkan akan muncul di "Daftar Tunggu".</li>
+                <li><strong>Proses FIFO:</strong> Klik "Proses FIFO" untuk melayani pemesan pertama dalam antrian hingga selesai.</li>
+                <li><strong>Proses Round Robin:</strong> Atur nilai "Quantum" (jatah tiket per putaran), lalu klik "Proses Round Robin" untuk memproses antrian secara adil. Setiap pemesan akan dilayani sesuai jatah quantum secara bergantian.</li>
+                <li><strong>Hasil Proses:</strong> Notifikasi akan muncul di bagian "Hasil Proses" setiap kali sebuah antrian diproses.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="Script.js"></script>
+</body>
+</html>

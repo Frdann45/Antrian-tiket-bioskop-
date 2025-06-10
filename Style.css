@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --background-color: #f0f2f5;
+    --card-bg-color: #ffffff;
+    --text-color: #333;
+    --light-text-color: #fdfdfd;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: var(--card-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-text-color);
+    padding: 25px 40px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-weight: 400;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    padding: 30px 40px;
+}
+
+.input-section h2, .queue-section h2 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--light-text-color);
+}
+
+button i {
+    margin-right: 8px;
+}
+
+#addQueueBtn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+#addQueueBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.processing-controls {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.quantum-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.quantum-input label {
+    font-weight: 600;
+}
+
+.quantum-input input {
+    width: 70px;
+    margin-bottom: 0;
+}
+
+#processFifoBtn {
+    background-color: var(--success-color);
+    margin-bottom: 10px;
+}
+
+#processRRBtn {
+    background-color: #ff8c00;
+}
+
+#processFifoBtn:hover, #processRRBtn:hover {
+    opacity: 0.9;
+}
+
+#queueList {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#queueList li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--secondary-color);
+}
+
+#queueList li span {
+    font-weight: 600;
+}
+
+.results {
+    margin-top: 30px;
+}
+
+#result-container {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 50px;
+    transition: background-color 0.3s;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 40px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+#helpBtn {
+    width: auto;
+    background: none;
+    color: var(--primary-color);
+    font-size: 1em;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+}
+
+#helpBtn:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg-color);
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #333;
+}
